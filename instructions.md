@@ -76,7 +76,8 @@ goto where <wget https://wordpress.org/latest.tar.gz> fetched
     cp wp-config-sample.php wp-config.php
     nano wp-config.php 
     sudo vim /etc/apache2/apache2.conf
-    ![change None to All](apache.png)
+    
+![change None to All](apache.png)
 
     udo systemctl restart apache2
 
