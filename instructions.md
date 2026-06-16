@@ -20,10 +20,6 @@ step 4: install php
 step 5: install mysqlclient
 
     sudo apt install mysql-client -y
-   
-step 5: check conncetion
-
-   mysql -h wp-data.ct4wkse4iz17.ap-south-1.rds.amazonaws.com -u admin -p
 
 step 6: download latest WordPress files from their official website
     
@@ -38,6 +34,7 @@ give indentity name ->
 give user name (admin) ->
 self managed ->
 vpc (default) ->
+security group ->
 give database_name -> create
 
 step 7: Connect RDS and EC2 instance 
@@ -66,6 +63,8 @@ goto where <wget https://wordpress.org/latest.tar.gz> fetched
     tar -xzf latest.tar.gz
     ls
     sudo cp -r wordpress/* /var/www/html/
+
+
     sudo usermod -a -G apache2 ubuntu
     sudo chown -R ubuntu:apache2 /var/www
 
@@ -83,12 +82,7 @@ enter your database name/ username / password / RDS Endpoint
 ![change config](wpconfig.png)
 
     sudo vim /etc/apache2/apache2.conf
-give permissions
 
-    sudo chown -R www-data:www-data /var/www/html
-    sudo find /var/www/html -type d -exec chmod 755 {} \;
-    sudo find /var/www/html -type f -exec chmod 644 {} \;
-    sudo systemctl restart apache2
 
 debug: `ls /var/www/html/` if index.html page lists
  
@@ -96,8 +90,17 @@ debug: `ls /var/www/html/` if index.html page lists
     
 ![change None to All](apache.png)
 
-    sudo systemctl restart apache2
+    sudo systemctl restart apache2 
+    
+# check on browser that wordpress page show?
+if not
+debug: give permissions
 
+    sudo chown -R www-data:www-data /var/www/html
+    sudo find /var/www/html -type d -exec chmod 755 {} \;
+    sudo find /var/www/html -type f -exec chmod 644 {} \;
+    sudo systemctl restart apache2
+ 
 step 11: check again on browser 
     
     wordpress shows
@@ -111,3 +114,6 @@ login
     username
     password
     now you can run webpages
+
+
+    j63V&KLZvmMshn*B#I
