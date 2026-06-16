@@ -82,14 +82,13 @@ enter your database name/ username / password / RDS Endpoint
 ![change config](wpconfig.png)
 
     sudo vim /etc/apache2/apache2.conf
-
+    
+![change None to All](apache.png)
 
 debug: `ls /var/www/html/` if index.html page lists
  
     sudo rm /var/www/html/index.html
     
-![change None to All](apache.png)
-
     sudo systemctl restart apache2 
     
 # check on browser that wordpress page show?
