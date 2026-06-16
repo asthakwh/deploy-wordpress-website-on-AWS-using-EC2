@@ -14,7 +14,8 @@ step 3: copy the public IP of your EC2 instance and paste it in your browser
 step 4: install php
 
     sudo apt install php libapache2-mod-php -y
-    sudo apt update
+    sudo apt install php-mysql -y
+    php -m | grep mysqli #check
     sudo apt install mysql-client -y
    
 check 
@@ -43,12 +44,14 @@ step 7: Connect RDS and EC2 instance
 
 step 8: verify the connection to database
 
-    mysql -h <RDS-endpoint> -u admin -p <password>
-    mysql -h wp-data.ct4wkse4iz17.ap-south-1.rds.amazonaws.com -u admin -p polar123
+    mysql -h <RDS-endpoint> -u admin -p <enter password>
+    mysql -h wp-data.ct4wkse4iz17.ap-south-1.rds.amazonaws.com -u admin -p 
 
 check database 
 
      show databases; 
+
+     CREATE DATABASE wpdb;
 
 step 9:  WordPress Installation 
 
@@ -75,13 +78,16 @@ goto where <wget https://wordpress.org/latest.tar.gz> fetched
     ls
     cp wp-config-sample.php wp-config.php
     nano wp-config.php 
+
+![change config](wpconfig.png)
+
     sudo vim /etc/apache2/apache2.conf
+
+debug: `ls /var/www/html/` if index.html page lists
+ 
+    sudo rm /var/www/html/index.html
     
 ![change None to All](apache.png)
 
-    udo systemctl restart apache2
+    sudo systemctl restart apache2
 
-   63  cd
-   64  ls
-   65  curl localhost
-   66  history 
