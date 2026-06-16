@@ -91,3 +91,16 @@ debug: `ls /var/www/html/` if index.html page lists
 
     sudo systemctl restart apache2
 
+step 11: check again on browser 
+    
+    wordpress shows
+
+step 12:
+
+    give sample site name
+    username -> save password -> install wordpress
+login
+
+    username
+    password
+    now you can run webpages
