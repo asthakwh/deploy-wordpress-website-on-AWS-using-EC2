@@ -243,7 +243,7 @@ Click **Install WordPress**.
 
 ---
 
-## Learning Outcomes
+## Outcomes
 
 * Deploying applications on AWS EC2
 * Configuring Apache and PHP
@@ -254,8 +254,3 @@ Click **Install WordPress**.
 
 ---
 
-## Author
-
-**Your Name**
-
-Cloud & DevOps Project
